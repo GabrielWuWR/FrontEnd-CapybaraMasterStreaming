@@ -1,8 +1,10 @@
 :root {
     --corPrincipal: #381C10;
     --corAuxiliar: #2C2419;
+    --corMadeira: #483A2F;
     --corContorno: #6F5D36;
     --corTextoPrincipal: #EDD6C0;
+    --corEnfeites: #8F7542;
     --sombra: 0px 4px 27px 0px rgba(0, 0, 0, 0.7);
 }
 
@@ -13,7 +15,12 @@
     font-family: "Baloo Thambi 2", system-ui;
     list-style: none;
     text-decoration: none;
+}
 
+.estiloContainer {
+    background-color: var(--corAuxiliar);
+    box-shadow: var(--sombra);
+    border: 1px solid var(--corContorno);
 }
 
 body {
@@ -22,19 +29,19 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 4vh;
+    padding: 4vh 7vh 0px 7vh;
+    gap: 3vh;
 }
 
+/* HEADER */
+
 header {
-    background-color: var(--corAuxiliar);
-    border: 1px solid var(--corContorno);
     border-radius: 40px;
-    width: 95%;
+    width: 100%;
     height: 99px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    box-shadow: var(--sombra);
     position: relative;
     padding: 0px 4vh;
 }
@@ -74,30 +81,110 @@ header input:focus {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.inputPesquisa input:focus+.fa-magnifying-glass{
+.inputPesquisa input:focus+.fa-magnifying-glass {
     color: var(--corTextoPrincipal);
 }
 
-.inputPesquisa input:not(:placeholder-shown) + .fa-magnifying-glass {
+.inputPesquisa input:not(:placeholder-shown)+.fa-magnifying-glass {
     color: var(--corTextoPrincipal);
 }
 
 .fa-magnifying-glass {
     position: absolute;
-    right: 0;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 1.5rem;
     color: var(--corPrincipal);
     transition: .2s ease-in;
-    height: 100%;
-    width: 50px;
-    border-radius: 0px 50px 50px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .fa-magnifying-glass:hover {
     cursor: pointer;
+}
+
+/* FILME DESTAQUE */
+
+.filmeDestaque {
+    width: 100%;
+    height: 80vh;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0px 5vh;
+}
+
+.containerImagem {
+    background-image: url("https://m.media-amazon.com/images/M/MV5BZWMzNzRhYTItODQxYi00MmQ0LTk5YzYtZjkyNjkxNWVkMmEzXkEyXkFqcGc@._V1_.jpg");
+    width: 50vh;
+    height: 70vh;
+    background-size: cover;
+    border-radius: 50px;
+}
+
+.containerFoto {
+    border: 1px solid var(--corContorno);
+    background-color: var(--corPrincipal);
+    padding: 3.5%;
+    display: inline-block;
+    background-color: var(--corMadeira);
+    border-radius: 50px;
+}
+
+.enfeitesEsquerdos {
+    position: absolute;
+    width: 5%;
+    height: 74vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.enfeitesDireitos {
+    position: absolute;
+    height: 74vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    right: 0;
+}
+
+.enfeiteUmEsquerdo, .enfeiteDoisEsquerdo, .enfeiteUmDireito, .enfeiteDoisDireito {
+    border: 3px solid var(--corContorno);
+    background-image: url("./img/capivaraEnfeite.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10vh;
+    height: 10vh;
+    position: relative;
+    background-color: var(--corEnfeites);
+}
+
+.enfeiteUmEsquerdo {
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.enfeiteDoisEsquerdo {
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.enfeiteUmDireito {
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.enfeiteDoisDireito {
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+}
+
+.containerFotoPrincipal {
+    display: flex;
+    position: relative;
+    width: 54vh;
 }
