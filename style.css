@@ -1,0 +1,103 @@
+:root {
+    --corPrincipal: #381C10;
+    --corAuxiliar: #2C2419;
+    --corContorno: #6F5D36;
+    --corTextoPrincipal: #EDD6C0;
+    --sombra: 0px 4px 27px 0px rgba(0, 0, 0, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Baloo Thambi 2", system-ui;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+body {
+    background-color: var(--corPrincipal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 4vh;
+}
+
+header {
+    background-color: var(--corAuxiliar);
+    border: 1px solid var(--corContorno);
+    border-radius: 40px;
+    width: 95%;
+    height: 99px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: var(--sombra);
+    position: relative;
+    padding: 0px 4vh;
+}
+
+header ul {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    gap: 3vh;
+    width: 100%;
+    justify-content: center;
+}
+
+header a {
+    color: var(--corTextoPrincipal);
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+header input {
+    background-color: var(--corContorno);
+    color: var(--corTextoPrincipal);
+    border: none;
+    border-radius: 50px;
+    width: 50vh;
+    height: 50px;
+    font-size: 1.5rem;
+    padding: 0px 5vh 0px 2vh;
+    box-shadow: var(--sombra);
+}
+
+header input:focus {
+    outline: none;
+}
+
+.inputPesquisa {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputPesquisa input:focus+.fa-magnifying-glass{
+    color: var(--corTextoPrincipal);
+}
+
+.inputPesquisa input:not(:placeholder-shown) + .fa-magnifying-glass {
+    color: var(--corTextoPrincipal);
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    right: 0;
+    font-size: 1.5rem;
+    color: var(--corPrincipal);
+    transition: .2s ease-in;
+    height: 100%;
+    width: 50px;
+    border-radius: 0px 50px 50px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-magnifying-glass:hover {
+    cursor: pointer;
+}
